@@ -37,7 +37,9 @@
 #include <ChilliSource/Core/String/StringParser.h>
 #include <ChilliSource/Rendering/Base/SurfaceFormat.h>
 
-#include <GL/glew.h>
+//#include <GL/glew.h>
+#include <GLES2/gl2.h>
+
 #include <json/json.h>
 #include <SFML/OpenGL.hpp>
 
@@ -412,12 +414,7 @@ namespace CSBackend
 			CSCore::Integer2 windowSize(s32(f32(sf::VideoMode::getDesktopMode().width) * 0.8f), s32(f32(sf::VideoMode::getDesktopMode().height) * 0.8f));
 			m_window.create(sf::VideoMode((u32)windowSize.x, (u32)windowSize.y, sf::VideoMode::getDesktopMode().bitsPerPixel), "", sf::Style::Default, m_contextSettings);
 
-			GLenum glewError = glewInit();
-			if (GLEW_OK != glewError)
-			{
-				OutputDebugString(CSBackend::Windows::WindowsStringUtils::UTF8ToUTF16("[Chilli Source] Glew Error On Init : " + std::string((const char*)glewGetErrorString(glewError)) + "\n").c_str());
-				exit(1);
-			}
+
 
 			sf::Clock clock;
 			auto appStartTime = clock.getElapsedTime().asSeconds();

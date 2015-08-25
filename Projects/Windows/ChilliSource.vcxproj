@@ -725,6 +725,7 @@
     <ClCompile>
       <PreprocessorDefinitions>WIN32;NDEBUG;GLEW_STATIC;SFML_STATIC;CS_TARGETPLATFORM_WINDOWS;CS_LOGLEVEL_WARNING;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\CarlosCS3D\angle\include\;$(SolutionDir)\..\..\..\CarlosCS3D\SFML\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -735,10 +736,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;GLEW_STATIC;SFML_STATIC;CS_TARGETPLATFORM_WINDOWS;CS_ENABLE_DEBUG;CS_LOGLEVEL_VERBOSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;DEBUG;SFML_STATIC;CS_TARGETPLATFORM_WINDOWS;CS_ENABLE_DEBUG;CS_LOGLEVEL_VERBOSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\CarlosCS3D\angle\include\;$(SolutionDir)\..\..\..\CarlosCS3D\SFML\include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

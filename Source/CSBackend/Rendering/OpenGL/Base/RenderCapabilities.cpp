@@ -80,9 +80,9 @@ namespace CSBackend
             glGetShaderPrecisionFormat(GL_FRAGMENT_SHADER, GL_HIGH_FLOAT, fragmentHighRanges, &fragmentHighPrecision);
             areHighPrecFragmentsSupported = fragmentHighPrecision != 0 && fragmentHighRanges[0] != 0 && fragmentHighRanges[1] != 0;
             
-#ifdef CS_TARGETPLATFORM_ANDROID
+#ifdef CS_OPENGLVERSION_ES
             //Check for map buffer support
-            m_areMapBuffersSupported = CheckForOpenGLExtension("GL_OES_mapbuffer");
+            m_areMapBuffersSupported =  CheckForOpenGLExtension("GL_OES_mapbuffer");
 #endif
             
 #endif
